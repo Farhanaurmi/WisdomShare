@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +11,7 @@ import {RouterModule} from '@angular/router';
 import { PostComponent } from './post/post.component';
 import { HomeComponent } from './home/home.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
+
 
 const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
@@ -28,7 +31,9 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AngularEditorModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

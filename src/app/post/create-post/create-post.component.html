@@ -3,7 +3,27 @@
 
 <!-- rich text editor -->
 <div class="content">
-    <input type="text" placeholder="Enter post text" />
+	<select style="
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin-left: 2px;
+	margin-top: 2px;
+	margin-bottom: 10px;
+	font-size: 15px;
+	font-family: 'Courier New', Courier, monospace;
+	color: #000000;
+	background-color: #ffffff;
+	align-items: left;
+	
+	" name="visibility" id="visibility
+	">
+		<option value="public">Public</option>
+		<option value="private">Private</option>
+	</select>
+    <angular-editor></angular-editor>
+	<button class="SavebuttonDesign" style="margin-top: 10px; margin-bottom: 10px">Post</button>	
 </div>
 
 

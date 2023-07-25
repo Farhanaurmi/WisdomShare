@@ -1,29 +1,76 @@
-<p>create-post works!</p>
-<!-- { _id: ObjectId, userId: ObjectId (reference to Users._id), text: String, backgroundColor: String, font: String, fontSize: Number, visibility: String (public/private), createdAt: Date, updatedAt: Date } -->
-
-<!-- rich text editor -->
 <div class="content">
-	<select style="
-	width: 100px;
-	height: 30px;
-	border-radius: 5px;
-	border: 1px solid #ccc;
-	margin-left: 2px;
-	margin-top: 2px;
-	margin-bottom: 10px;
-	font-size: 15px;
-	font-family: 'Courier New', Courier, monospace;
-	color: #000000;
-	background-color: #ffffff;
-	align-items: left;
-	
-	" name="visibility" id="visibility
-	">
-		<option value="public">Public</option>
-		<option value="private">Private</option>
-	</select>
-    <angular-editor></angular-editor>
-	<button class="SavebuttonDesign" style="margin-top: 10px; margin-bottom: 10px">Post</button>	
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Create Post</h1>
+      </div>
+    </div>
+
+    <form>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <div class="form-outline">
+				<select
+              style="
+                width: 100px;
+                height: 30px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                margin-left: 2px;
+                margin-top: 2px;
+                margin-bottom: 10px;
+                font-size: 15px;
+                font-family: 'Courier New', Courier, monospace;
+                color: #000000;
+                background-color: #ffffff;
+                align-items: left;
+              "
+              name="visibility"
+              id="visibility
+						"
+            >
+              <option value="public">Public</option>
+              <option value="private">Private</option>
+            </select>
+				<input type="text" id="form12" class="form-control" />
+				<label class="form-label" for="form12">Example label</label>
+			  </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <angular-editor></angular-editor>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="image">Image</label>
+            <input
+              type="file"
+              name="image"
+              id="image"
+              class="form-control"
+              placeholder="Image"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <button
+            class="SavebuttonDesign"
+            style="margin-top: 10px; margin-bottom: 10px"
+          >
+            Post
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
-
-

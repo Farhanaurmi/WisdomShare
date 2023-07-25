@@ -1,6 +1,6 @@
 .content {
     display: flex;
-    margin: 82px auto 32px;
+    margin: 60px auto 32px;
     padding: 0 16px;
     max-width: 960px;
     flex-direction: column;
@@ -11,13 +11,12 @@
 .terminal1 {
     position: relative;
     width: 100%;
+    max-height: fit-content;
     max-width: 600px;
     border-radius: 6px;
-    padding-top: 15px;
     padding-bottom: 5px;
-    margin-top: 8px;
     overflow: hidden;
-    background-color: rgb(164, 164, 176);
+    background-color: rgb(255, 255, 255);
   }
 /* 
   .terminal::before {

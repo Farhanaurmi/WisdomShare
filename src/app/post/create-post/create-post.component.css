@@ -6,7 +6,20 @@
     padding: 0 16px;
     max-width: 960px;
     flex-direction: column;
-    
+    margin-right: 100px;
+  }
+
+  .terminal2 {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 6px;
+    padding-top: 15px;
+    margin-top: 25px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 1000px;
+
   }
   .SavebuttonDesign{
     background-color: #890a0a; /* Green */

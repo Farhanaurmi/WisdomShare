@@ -12,6 +12,7 @@ import { PostComponent } from './post/post.component';
 import { HomeComponent } from './home/home.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   GoogleLoginProvider
 } from '@abacritt/angularx-social-login';
@@ -38,7 +39,10 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     AngularEditorModule,
     HttpClientModule,
-    SocialLoginModule
+    SocialLoginModule,
+    FormsModule,
+    ReactiveFormsModule, 
+    
   ],
   providers: [
     {

@@ -11,11 +11,9 @@ import {RouterModule} from '@angular/router';
 import { PostComponent } from './post/post.component';
 import { HomeComponent } from './home/home.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
-import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { SocialLoginModule, SocialAuthServiceConfig,GoogleLoginProvider,GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  GoogleLoginProvider
-} from '@abacritt/angularx-social-login';
+
 
 
 const routes: Routes = [
@@ -41,8 +39,8 @@ const routes: Routes = [
     HttpClientModule,
     SocialLoginModule,
     FormsModule,
-    ReactiveFormsModule, 
-    
+    ReactiveFormsModule,
+    GoogleSigninButtonModule
   ],
   providers: [
     {
@@ -53,9 +51,9 @@ const routes: Routes = [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '918478431325-3ad89ckpd7qcfh09haj9fvq0sldudgi7.apps.googleusercontent.com'
+              '197973679640-uh3ngk3iofi9trpqveio3acpmidnr4ac.apps.googleusercontent.com'
             )
-          }
+          },
         ],
         onError: (err) => {
           console.error(err);

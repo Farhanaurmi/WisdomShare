@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "visibility": "public",
+      "background-color": "#ffffff",
+      "textContent": "some text",
+      "image": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+      "created_at": "2019-01-01T12:00:00Z"
+    },
+    {
+      "visibility": "private",
+      "backgroundColor": "#fafafa",
+      "textContent": "<font size=\"4\">dsfsdfds</font>",
+      "image": "C:\\fakepath\\post_img2.jpg",
+      "id": 11
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

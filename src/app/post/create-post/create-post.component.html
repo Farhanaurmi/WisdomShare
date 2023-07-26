@@ -1,57 +1,71 @@
 <div class="content">
   <div class="terminal2">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h4>Create Post</h4>
-      </div>
-    </div>
-
-    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
-      <div class="row mb-3">
-        <div class="col-md-2">
-          <label for="visibility" class="form-label">Visibility:</label>
-        </div>
-        <div class="col-md-4">
-          <select class="form-select" name="visibility" id="visibility">
-            <option value="public">Public</option>
-            <option value="private">Private</option>
-          </select>
-        </div>
-      </div>
-      <div class="row mb-3">
-        <div class="col-md-6">
-          <label for="background-color" style="margin-right: 40px;">Background Color:</label>
-          <input type="color" id="background-color" name="background-color" (change)="changeBackgroundColor($event)">
-        </div>
-      </div>
-      <!-- <div class="row mb-3">
-        <div class="col-md-12">
-          <div class="form-group">
-            <angular-editor id="editor" name="text-content"></angular-editor>
-          </div>
-        </div>
-      </div> -->
-      <div class="form-group">
-        <angular-editor
-          id="editor"
-          formControlName="textContent"
-          [config]="editorConfig"
-        ></angular-editor>
-      </div>
-      
-      <div class="row mb-3">
-        <div class="col-md-6">
-          <label for="image">Image:</label>
-          <input type="text" name="image" id="image" class="form-control" />
-        </div>
-      </div>
+    <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
-          <button class="btn btn-primary" style="margin-top: 10px; margin-bottom: 10px;">Post</button>
+          <h4>Create Post</h4>
         </div>
       </div>
-    </form>
+
+      <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+        <div class="row mb-3">
+          <div class="col-md-2">
+            <label for="visibility" class="form-label">Visibility:</label>
+          </div>
+          <div class="col-md-4">
+            <select class="form-select" name="visibility" id="visibility" formControlName="visibility">
+              <option value="public">Public</option>
+              <option value="private">Private</option>
+            </select>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="background-color" style="margin-right: 40px"
+              >Background Color:</label>
+            <input
+              type="color"
+              id="background-color"
+              name="background-color"
+              (change)="changeBackgroundColor($event)"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <angular-editor
+            id="editor"
+            formControlName="textContent"
+            [config]="editorConfig"
+          ></angular-editor>
+        </div>
+        <!-- preview of image -->
+
+        <div class="row mt-3">
+          <div class="col-md-12">
+            <div class="card" style="width: 18rem">
+              <img class="card-img-top" src="{{ postForm.value.image ? postForm.value.image : 'https://via.placeholder.com/150' }}" alt="Card image cap" />
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="image">Image:</label>
+            <input type="file" name="image" id="image" class="form-control" (change)="onImageChange($event)" />
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <button
+              class="btn btn-primary"
+              style="margin-top: 10px; margin-bottom: 10px"
+            >
+              Post
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
 </div>

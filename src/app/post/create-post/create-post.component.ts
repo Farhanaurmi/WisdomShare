@@ -1,12 +1,19 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { AngularEditorComponent, AngularEditorConfig } from '@kolkov/angular-editor';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { PostService } from 'src/app/services/post.service';
+import { ToastComponent } from '@syncfusion/ej2-angular-notifications';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-post',
   templateUrl: './create-post.component.html',
-  styleUrls: ['./create-post.component.css']
+  styleUrls: ['./create-post.component.css'],
+  template: `<ejs-toast #element (created)="onCreate($event)">
+    <ng-template #content>
+      <div>Successfully post created</div>
+    </ng-template>
+    </ejs-toast>`
 })
 export class CreatePostComponent {
   postForm!: FormGroup;
@@ -24,7 +31,7 @@ export class CreatePostComponent {
   imageURL: string | undefined;
 
 
-  constructor(private formBuilder: FormBuilder, private postService: PostService) {
+  constructor(private formBuilder: FormBuilder, private postService: PostService,private element: ElementRef, private router: Router) {
     this.postForm = this.formBuilder.group({
       visibility: new FormControl('public'),
       'background-color': '#ffffff',
@@ -73,12 +80,13 @@ export class CreatePostComponent {
       textContent,
       image,
     };
-    console.log("hshsh")
     this.postService.createPost(post).subscribe(
       
       (response: any) => {
-        // Handle the response as needed
-        console.log('Post creation response:', response);
+      
+        //redirect
+        this.router.navigate(['/profile']);
+
       },
       (error: any) => {
         // Handle any errors that may occur during the API call

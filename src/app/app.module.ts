@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
 import { SocialLoginModule, SocialAuthServiceConfig,GoogleLoginProvider,GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastModule } from '@syncfusion/ej2-angular-notifications';
 
 
 
@@ -40,7 +41,8 @@ const routes: Routes = [
     SocialLoginModule,
     FormsModule,
     ReactiveFormsModule,
-    GoogleSigninButtonModule
+    GoogleSigninButtonModule,
+    ToastModule
   ],
   providers: [
     {

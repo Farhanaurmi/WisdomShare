@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,11 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
   userData: any; // Replace 'any' with the actual type of your user data
-
-  constructor() {}
+  posts: any = [];
+  constructor(private postService: PostService) { }
 
   ngOnInit(): void {
     this.getUserDataFromLocalStorage();
+    this.postService.getPosts().subscribe(
+      (response: any) => {
+        this.posts = response;
+        console.log(this.posts,"hs33h")
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
   }
 
   getUserDataFromLocalStorage(): void {

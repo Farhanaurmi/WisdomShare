@@ -3,7 +3,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
-          <h4>Create Post</h4>
+          <h4 style="
+              font-size: 20px;
+              color: #000000;
+              font-weight: bolder;
+              margin-top: 10px;
+              margin-bottom: 30px;
+              font-family: 'Courier New', Courier, monospace;
+            ">CREATE POST</h4>
         </div>
       </div>
 
@@ -12,7 +19,7 @@
           <div class="col-md-2">
             <label for="visibility" class="form-label">Visibility:</label>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" style=" margin-left: 30px">
             <select class="form-select" name="visibility" id="visibility" formControlName="visibility">
               <option value="public">Public</option>
               <option value="private">Private</option>
@@ -21,8 +28,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-md-6">
-            <label for="background-color" style="margin-right: 40px"
-              >Background Color:</label>
+            <label for="background-color" style="margin-right: 20px">Background Color:</label>
             <input
               type="color"
               id="background-color"
@@ -50,7 +56,9 @@
 
         <div class="row mb-3">
           <div class="col-md-6">
-            <label for="image">Image:</label>
+            <label for="image" style="
+              margin: 10px 10px 10px 0px;
+              ">Image:</label>
             <input type="file" name="image" id="image" class="form-control" (change)="onImageChange($event)" />
           </div>
         </div>

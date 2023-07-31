@@ -12,14 +12,16 @@ export class AppComponent implements OnInit {
   //fetch user data from local storage
   
 
-  constructor(private authService: SocialAuthService) { }
+  constructor(private authService: SocialAuthService) {
+    console.log(this.loggedIn)
+   }
 
   ngOnInit() {
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);
-      //store user data in local storage
       localStorage.setItem('user', JSON.stringify(this.user));
+      
     });
   }
   logout(): void {

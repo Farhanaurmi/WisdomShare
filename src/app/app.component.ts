@@ -9,6 +9,7 @@ import { SocialAuthService } from "@abacritt/angularx-social-login";
 export class AppComponent implements OnInit {
   user: any;
   loggedIn: boolean = false;
+  isNavbarCollapsed = true;
   //fetch user data from local storage
   
 
@@ -23,6 +24,9 @@ export class AppComponent implements OnInit {
       localStorage.setItem('user', JSON.stringify(this.user));
       
     });
+  }
+  toggleNavbar() {
+    this.isNavbarCollapsed = !this.isNavbarCollapsed;
   }
   logout(): void {
     this.authService.signOut();

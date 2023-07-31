@@ -23,4 +23,15 @@ export class PostComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 
+  downloadFile(image: any){
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', image);
+    link.setAttribute('download', 'file.pdf');
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    console.log(image)
+  }
+
 }

@@ -14,6 +14,10 @@ import { CreatePostComponent } from './post/create-post/create-post.component';
 import { SocialLoginModule, SocialAuthServiceConfig,GoogleLoginProvider,GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastModule } from '@syncfusion/ej2-angular-notifications';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
+import { userReducer } from './store/user.reducer';
 
 
 
@@ -42,7 +46,11 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     GoogleSigninButtonModule,
-    ToastModule
+    ToastModule,
+    StoreModule.forRoot({
+      user: userReducer
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [
     {

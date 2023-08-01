@@ -1,7 +1,7 @@
 <div style="
 background-color: #dce4ec;
-" *ngIf="user">
-<nav class="navbar navbar-expand-lg navbar-light bg-primary" *ngIf="user">
+" *ngIf="userData">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary" *ngIf="userData">
   <div class="d-flex align-items-center">
     <a routerLink="/">
       <img width="40" alt="Angular Logo" src="/assets/WS.png" style="margin-left: 40px; margin-right: 10px;">
@@ -26,7 +26,8 @@ background-color: #dce4ec;
           ">Logout</a>
       </li>
     </ul>
-  </div>  
+  </div>
+ 
 </nav>
 <div style="margin-top: -20px;">
   <router-outlet></router-outlet>
@@ -36,7 +37,7 @@ background-color: #dce4ec;
 
 
 
-<div class="container" *ngIf="!user">
+<div class="container" *ngIf="!userData">
   <div class="row justify-content-center align-items-center vh-100">
     <div class="col-md-6">
       <div class="card">

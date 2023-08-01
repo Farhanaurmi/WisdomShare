@@ -28,6 +28,13 @@
       "textContent": "<font size=\"6\" face=\"Comic Sans MS\">Urmi</font>",
       "image": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
       "id": 15
+    },
+    {
+      "visibility": "private",
+      "backgroundColor": "#9d2020",
+      "textContent": "<font size=\"7\">sdhfjdksfj</font>",
+      "image": "C:\\fakepath\\1676a8cc953b4568131fb3436254f57c.jpg",
+      "id": 16
     }
   ],
   "comments": [

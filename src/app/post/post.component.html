@@ -6,8 +6,8 @@
     <span style="font-size: 15px;">14 July 14:31</span>
   </div>
 </div>
-<div class="d-flex" style="margin-left: 12px; margin-top:5px">
-  <p class="font-size: 15px; color: #000000; margin-left: 10px; margin-bottom: 10px; font-family: 'Courier New', Courier, monospace;">
+<div class="d-flex" [style]="post.backgroundColor ? 'background-color: ' + post.backgroundColor : ''">
+  <p class="font-size: 15px; color: #000000; margin-left: 10px; margin-bottom: 10px; font-family: 'Courier New', Courier, monospace;" style="margin-left: 12px; margin-top:5px">
     <span style="color: #000000;">
       <div [innerHTML]="richTextContent"></div>
     </span>

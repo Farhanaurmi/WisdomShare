@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../services/post.service';
+import { Observable } from 'rxjs';
+import { AppState } from '../store/app.state';
+import { Store, select } from '@ngrx/store';
 
 @Component({
   selector: 'app-profile',
@@ -7,16 +10,18 @@ import { PostService } from '../services/post.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  userData: any; // Replace 'any' with the actual type of your user data
+  userData: any;
   posts: any = [];
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, private store: Store<{user:{user:any}}>) { }
 
   ngOnInit(): void {
-    this.getUserDataFromLocalStorage();
+    this.store.select('user').subscribe((data)=>{
+      this.userData = data.user;
+    })
+    console.log(this.userData,"muju")
     this.postService.getPosts().subscribe(
       (response: any) => {
         this.posts = response;
-        console.log(this.posts,"hs33h")
       },
       (error: any) => {
         console.log(error);
@@ -24,13 +29,5 @@ export class ProfileComponent implements OnInit {
     );
   }
 
-  getUserDataFromLocalStorage(): void {
-    const userDataString = localStorage.getItem('userData'); // Assuming the user data is stored with the key 'userData'
-    if (userDataString) {
-      this.userData = JSON.parse(userDataString);
-    } else {
-      // Handle the case when user data is not found in local storage
-      // For example, redirect to login or display an error message
-    }
-  }
+  
 }
